@@ -1,0 +1,84 @@
+<head>
+    <link rel="stylesheet" href="/static/css/main12.css">
+</head>
+{% extends "stream.html" %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="grid-25">
+        <h1>{{ user.username }}</h1>
+    </div>
+
+    <div class="grid-50">
+        <div class="grid-33">
+            <h5>Posts</h5>
+            <p>{{ user.posts.count() }}</p>
+        </div>
+        <div class="grid-33">
+            <h5>Followers</h5>
+            <p>{{ user.followers().count() }}</p>
+        </div>
+
+
+
+    </div>
+<div class="grid-33">
+            <h5>Followers</h5>
+            {% for name in user.followers() %}
+            <p>{{ name.username }}</p>
+            {% endfor %}
+        </div>
+    <div class="introwrapper" style="width: 17%;
+  margin: 50px auto 0;
+
+  border-radius: 4px;
+  margin-left:2%;
+  position:absolute;
+  padding-bottom: 20px;
+  padding-left: 0px;
+">
+
+    <img src="/static/img/10703972_10203218137550234_7403270267379251558_n.jpg" style="
+    margin: 10px auto 0;
+    border-radius: 9px;
+    border-style: solid;
+    border-width: 5px;
+    margin-left:10px;
+    position:relative;
+    border:10px;
+    max-height:250px;
+width:80%" >
+
+
+
+</div>
+<div style="width:5%;">
+     </div>
+
+    <div class="introwrapper" style="width: 17%;
+  margin: 50px auto 0;
+  border-radius: 4px;
+  margin-left:2%;
+  position:absolute;
+  padding-bottom: 20px;
+  padding-left: 0px;
+">
+
+    <img src="/static/img/10703972_10203218137550234_7403270267379251558_n.jpg" style="
+    margin: 10px auto 0;
+    border-radius: 9px;
+    border-style: solid;
+    border-width: 5px;
+    margin-left:500px;
+    position:relative;
+    border:10px;
+    max-height:250px;
+width:80%" >
+
+
+
+</div>
+</div>
+{% endblock %}

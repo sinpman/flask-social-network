@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% from 'macros.html' import render_field %}
+{% block content %}
+<form method="POST" action="" enctype="multipart/form-data">
+    <label style="color:black;font-size:30px"><b>Group Name</b></label>
+    <input placeholder="Group Name" style="border:solid"></input>
+    <label style="color:black;font-size:30px"><b>Add Some Members</b></label>
+    <input placeholder="Add some members" style="border:solid"></input>
+    <label style="color:black;font-size:30px"><b>Select Privacy</b></label>
+    <select style="color:black;width:100%;height:50px;border:solid">
+  <option value="Public" selected="selected">Public</option>
+  <option value="VIP">VIP Members Only</option>
+</select>
+    <br>
+    <br>
+    <!--<input type = "file" name = "file" accept="image/*" enctype="multipart/form-data"/>-->
+    <button type="submit" style="background-color:blue" id="submit"><b>Create Group!</b></button>
+
+</form>
+{% endblock %}

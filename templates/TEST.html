@@ -1,0 +1,43 @@
+<Style>
+    .profile-img-container {
+  position: absolute;
+  /*width:50%;*/
+  /*border-radius:50%;*/
+  overflow:hidden;
+}
+
+.profile-img-container img:hover {
+  opacity: 0.5;
+  z-index: 501;
+}
+
+.profile-img-container img:hover + i {
+  display: block;
+  z-index: 500;
+}
+
+.profile-img-container .icon-wrapper {
+  position: absolute;
+  bottom:0;
+  left:0;
+  background:rgba(0,0,0,0.7);
+  color:#fff;
+  text-align:center;
+  width:100%;
+  padding:5px;
+}
+
+</Style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<div class="profile-img-container img-circle">
+  <input type="file" />
+  <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" class="img-thumbnail img-circle img-responsive" />
+  <div class="icon-wrapper">
+    <i class="fa fa-upload fa-5x"></i>
+  </div>
+</div>

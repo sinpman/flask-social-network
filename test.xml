@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ReceiptSet>
+<Receipt>
+<Amount>200.00</Amount>
+<Comments></Comments>
+<CurrencyCode>USD</CurrencyCode>
+<ReceiptMethodId>300000002782416</ReceiptMethodId>
+<ReceiptNumber>RCP-1016</ReceiptNumber>
+<OrgId>300000002123282</OrgId>
+<ReceivablesTransactionId>300000011697214</ReceivablesTransactionId>
+<PaymentTransactionExtensionId></PaymentTransactionExtensionId>
+<MiscellaneousPaymentSource></MiscellaneousPaymentSource>
+<ReceiptDate>2019-21-26</ReceiptDate>
+<ReferenceId>F38F6FD8C900CFA6219C1998DA3EDC8E56A850AD04CC497DC2D1CC5CF3345A4D</ReferenceId>
+<UserCurrencyCode></UserCurrencyCode>
+<ReceiptMethodName></ReceiptMethodName>
+</Receipt>
+</ReceiptSet>

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for post in stream %}
+    <article>
+        <h2>
+            <a href="{{ url_for('delete_post', post_id=post.id) }}" class="view"></a>
+            <b><a style="color:blue" href="{{ url_for('stream', username=post.user.username) }}">{{ post.user.username }}</a></b>
+            <i class="clock"></i><time data-time="{{ post.timestamp.timestamp() }}" class="distime" datetime="{{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}">{{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</time>
+            {% if not delete %}
+            <button style="width:100px;float:right;background-color:blue;"><b>+Join</b></button>
+            {% endif %}
+        </h2>
+        <!--<i class="clock"></i><time data-time="{{ post.timestamp.timestamp() }}" class="distime" datetime="{{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}">{{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</time>-->
+        <a href="{{ url_for('view_post', post_id=post.id) }}" class="view">View</a>&nbsp
+        {% if delete %}
+        <a href="{{ url_for('delete_post', post_id=post.id) }}" class="view">Delete</a>
+        {% endif %}
+        <div class="post">
+            {% if 'youtube' in post.content %}
+            <div id="{{post}}" ></div>
+            <script type="text/javascript">
+
+            youtubelink="{{post.content}}".split('?v=')[1];
+            if (youtubelink){
+   document.getElementById({{post}}).innerHTML = '<iframe src="https://www.youtube.com/embed/'+youtubelink+'" width="80%" height ="500px"  style="border-radius: 4px;margin-left:2%;padding-left: 0px;margin: 50px auto 0;"></iframe>';
+   }
+   else
+   {
+   document.getElementById({{post}}).innerHTML = '{{post.content}}';
+   }
+</script>
+
+{% elif post.filename %}
+<b><p style="Arial, Helvetica, sans-serif;color:black;font-size:20px;">{{ post.content }}</p></b>
+            <div id="img-{{post}}" ></div>
+
+            <script type="text/javascript">
+
+   document.getElementById("img-{{post}}").innerHTML = '<img src="/{{post.filepath}}"  width="80%" height ="500px"  style="border-radius: 4px;margin-left:2%;padding-left: 0px;margin: 20px auto 0;" frameborder="0" allowfullscreen>';
+
+</script>
+
+
+
+            {% else %}
+            <b><p style="Arial, Helvetica, sans-serif;color:black;fone-size:20px">{{ post.content }}</p></b>
+            {% endif %}
+
+        </div>
+<br>
+
+        <div class="post">
+            0 people likes this
+        </div>
+
+
+        <a href class="view">Like</a>
+        <a href class="view">Share</a>
+        <a href class="view">Comment</a>
+    </article>
+{% endfor %}
+
+{% endblock %}
+
