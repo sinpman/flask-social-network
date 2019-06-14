@@ -13,7 +13,7 @@ import forms
 import models
 
 DEBUG = True
-PORT = 8000
+PORT = 8080
 HOST = '0.0.0.0'
 vipMember = '0'
 DELETE_Y = int('1')
